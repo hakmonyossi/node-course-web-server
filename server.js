@@ -22,12 +22,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs' , {
-        pageTitle: '404 maintenance',
-        //currentYear: new Date().getFullYear()
-    });
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs' , {
+//         pageTitle: '404 maintenance',
+//         //currentYear: new Date().getFullYear()
+//     });
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -60,6 +60,14 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('About.hbs' , {
         pageTitle: 'About Page',
+        //currentYear: new Date().getFullYear()
+    });
+});
+
+
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio.hbs' , {
+        pageTitle: 'See my portfolio',
         //currentYear: new Date().getFullYear()
     });
 });
